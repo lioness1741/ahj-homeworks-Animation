@@ -1,17 +1,17 @@
 export default class WidgetCollapsible {
-    constructor() {
-      this.container = document.querySelector('.main_container');
-    }
+  constructor() {
+    this.container = document.querySelector('.main_container');
+  }
   
-    init() {
-      document.addEventListener('DOMContentLoaded', () => {
-        this.initWidget();
-      });
-    }
+  init() {
+    document.addEventListener('DOMContentLoaded', () => {
+      this.initWidget();
+    });
+  }
   
-    initWidget() {
-      if (!this.container) return;
-      const widgetCollapsibleHtml = `
+  initWidget() {
+    if (!this.container) return;
+    const widgetCollapsibleHtml = `
       <div data-widget="widgetCollapsible" class="widget widget_collapsible">       
         <div class="widget_controls"> 
           <button data-id="widgetButton" class="widget_button">Collapse</button> 
@@ -25,13 +25,13 @@ export default class WidgetCollapsible {
       </div>
       `;
   
-      this.container.insertAdjacentHTML('beforeEnd', widgetCollapsibleHtml);
+    this.container.insertAdjacentHTML('beforeEnd', widgetCollapsibleHtml);
   
-      this.container.querySelector('[data-widget=widgetCollapsible]').addEventListener('click', (evt) => {
-        if (evt.target.dataset.id !== 'widgetButton') return;
-        const widgetFooter = evt.currentTarget.querySelector('[data-id=widgetFooter]');
-        widgetFooter.classList.toggle('collapsed');
-        widgetFooter.classList.toggle('show');
-      });
-    }
+    this.container.querySelector('[data-widget=widgetCollapsible]').addEventListener('click', (evt) => {
+      if (evt.target.dataset.id !== 'widgetButton') return;
+      const widgetFooter = evt.currentTarget.querySelector('[data-id=widgetFooter]');
+      widgetFooter.classList.toggle('collapsed');
+      widgetFooter.classList.toggle('show');
+    });
   }
+}
