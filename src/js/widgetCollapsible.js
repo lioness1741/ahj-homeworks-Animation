@@ -8,7 +8,7 @@ export default class WidgetCollapsible {
       this.initWidget();
     });
   }
-  
+
   initWidget() {
     if (!this.container) return;
     const widgetCollapsibleHtml = `
